@@ -1,5 +1,5 @@
-# Dashboard-Teste
+## Dashboard-Teste
 
-## Projetos teste
+# Projeto teste
 #### Testando a criação de menu lateral, função de night/day, popups de notificação.
-#### Utilizando apenas Css, Javascript e Jquery
+<br> Utilizando apenas Css, Javascript e Jquery
