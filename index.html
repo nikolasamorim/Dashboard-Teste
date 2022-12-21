@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="shortcut icon" href="img/favicon.png">
+
+    <script src="js/main.js"></script>
+
+    <!--Animation css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <!--fontAwesome-->
+    <script src="https://kit.fontawesome.com/f1b6df7d8e.js" crossorigin="anonymous"></script>
+
+    <!--JQUERY-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <!-- início do preloader -->
+    <div id="preloader">
+        <div class="inner">
+            <!-- HTML DA ANIMAÇÃO MUITO LOUCA DO SEU PRELOADER! -->
+            <div class="bolas">
+                <div></div>
+                <div><img src="img/favicon.png" alt="load.png"></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <!-- fim do preloader -->
+    <script>
+        //<![CDATA[
+        $(window).on('load', function () {
+            $('#preloader .inner').fadeOut();
+            $('#preloader').delay(350).fadeOut('slow');
+            $('body').delay(350).css({
+                'overflow': 'visible'
+            });
+        })
+            //]]>
+    </script>
+
+    <nav>
+        <ul>
+            <li> <img src="img/logo.png" alt=""><a href="" class="logo">Nikolas Amorim</a></li>
+        </ul>
+        <ul class="header">
+            <li class="li"><input type="search">
+                <div id="lupa" onclick="alert('Função indisponivel no momento!');"></div>
+            </li>
+            <li id="message" class="li"><a class="nav-red-but bg-cor-principal-light" href="#">Login</a></li>
+            <li class="li"><a class="bars" href="#"><i class="fa-solid fa-bars"></i></a></li>
+        </ul>
+        <!--Hamburguer-->
+        <div class="org">
+            <input id="hamburguer" type="checkbox" style="display:none;">
+            <label for="hamburguer">
+                <div class="hamburguer active"></div>
+            </label>
+            <ul class="menu active">
+                <li><input type="text"></li>
+                <li><a class="nav-red-but" href="#">Login</a></li>
+                <li><a href="#"><i class="fa-solid fa-bell"></i></a></li>
+            </ul>
+        </div>
+        <script>
+            $(document).ready(function () {
+                $(".hamburguer").click(function () {
+                    $(this).toggleClass("active");
+                    $(".menu").toggleClass("active");
+                });
+            });
+        </script>
+    </nav>
+
+    <section class="msg">
+        No momento este serviço<br> está indisponível!
+        <a class="close-msg" id="msg-close" href="#"></a>
+    </section>
+
+    <section class="view">
+        <div class="left-menu">
+            <ul>
+                <li><a href="#"><i class="fa-solid fa-house-chimney"></i>
+                        <label for=""> Home</label>
+                    </a></li>
+                <li><a href="#"><i class="fa-solid fa-chart-simple"></i>
+                        <label for=""> Gráfics</label>
+                    </a></li>
+                <li><a href="#"><i class="fa-solid fa-shop"></i>
+                        <label for=""> Market</label>
+                    </a></li>
+                <li><a id="news" href="#"><i class="fa-solid fa-newspaper"></i>
+                        <label for=""> NewsLetter</label>
+                    </a></li>
+                <li><a href="#"><i class="fa-solid fa-gear"></i>
+                        <label for=""> Configs</label>
+                    </a></li>
+            </ul>
+        </div>
+        <section class="newspaper">
+            <div class="container-news">
+                <h1>
+                    Jornal News Financeiro
+                </h1>
+                <a class="close" id="news-close" href="#"></a>
+                
+            </div>
+        </section>
+        <script>
+            $(document).ready(function () {
+                $(".bars").click(function () {
+                    $(this).toggleClass("ativado");
+                    $(".left-menu").toggleClass("ativado");
+                });
+            });
+            $(document).ready(function () {
+                $("#news").click(function () {
+                    $(this).toggleClass("see");
+                    $(".newspaper").toggleClass("see");
+                });
+            });
+            $(document).ready(function () {
+                $("#news-close").click(function () {
+                    $(this).toggleClass("see");
+                    $(".newspaper").toggleClass("see");
+                });
+            });
+            $(document).ready(function () {
+                $("#msg-close").click(function () {
+                    $(this).toggleClass("aparence");
+                    $(".msg").toggleClass("aparence");
+                });
+            });
+            $(document).ready(function () {
+                $("#message").click(function () {
+                    $(this).toggleClass("aparence");
+                    $(".msg").toggleClass("aparence");
+                });
+            });
+        </script>
+        <div id="dash-area" class="dash-area">
+            <section id="banner" class="banner">
+                <div class="org-infos">
+                    <div class="infos">
+                        <h1>Hello World <img class="bolt" src="img/Logo.png" alt=""></h1>
+                        <h3>Desenvolvedor Web Full Stack</h3>
+                        <img class="dev" src="img/linguagens.png" alt="linguagens.png">
+                        <a href="#" id="red-but"
+                            class="animate__animated animate__shakeX animate__slow	2s animate__delay-4s 4s animate__repeat-1	1">Quem
+                            sou eu?</a>
+                    </div>
+                </div>
+                <img class="banner-phone" src="img/me.png" alt="foto.png">
+            </section>
+        </div>
+    </section>
+
+    <div class="time">
+        <a onclick="nightforday()" class="moon" id="moon" href="#"><i class="fa-solid fa-moon"></i></a>
+        <a onclick="dayfornight()" class="sun" id="none-sun" href="#"><i class="fa-solid fa-sun"></i></a>
+    </div>
+
+</body>
+
+</html>
